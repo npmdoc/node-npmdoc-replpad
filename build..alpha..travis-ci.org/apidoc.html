@@ -1,0 +1,890 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >replpad (v0.14.0)</a>
+</h1>
+<h4>Pipes content of files to a node repl whenever they change and adds many more features to enable a highly interactive coding experience.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.replpad">module replpad</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.replpad">
+            function <span class="apidocSignatureSpan"></span>replpad
+            <span class="apidocSignatureSpan">(root, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.findexquire">
+            function <span class="apidocSignatureSpan">replpad.</span>findexquire
+            <span class="apidocSignatureSpan">(requirePath, uncached)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.</span>current</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.</span>utl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.</span>watcher</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.replpad.current">module replpad.current</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">replpad.current.</span>highlight</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.current.map">
+            function <span class="apidocSignatureSpan">replpad.current.</span>map
+            <span class="apidocSignatureSpan">(nmap, imap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.current.</span>feed</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.current.</span>inspect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.current.</span>plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.current.</span>readme</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.current.</span>scriptietalkie</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">replpad.current.</span>prompt</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">replpad.current.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.replpad.findexquire">module replpad.findexquire</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.findexquire.findexquire">
+            function <span class="apidocSignatureSpan">replpad.</span>findexquire
+            <span class="apidocSignatureSpan">(requirePath, uncached)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.findexquire.find">
+            function <span class="apidocSignatureSpan">replpad.findexquire.</span>find
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">replpad.findexquire.</span>indexes</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.replpad.utl">module replpad.utl</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.copyFile">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>copyFile
+            <span class="apidocSignatureSpan">(srcFile, tgtFile, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.copyFileSync">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>copyFileSync
+            <span class="apidocSignatureSpan">(srcFile, tgtFile)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.existsSync">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>existsSync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.inspect">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>inspect
+            <span class="apidocSignatureSpan">(obj, depth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.log">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>log
+            <span class="apidocSignatureSpan">(obj, depth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.pad">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>pad
+            <span class="apidocSignatureSpan">(s, len, padding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.utl.shallowClone">
+            function <span class="apidocSignatureSpan">replpad.utl.</span>shallowClone
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.replpad.watcher">module replpad.watcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.watcher.watchFile">
+            function <span class="apidocSignatureSpan">replpad.watcher.</span>watchFile
+            <span class="apidocSignatureSpan">(entry, eventName, startedWatching, update)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.replpad.watcher.watchTree">
+            function <span class="apidocSignatureSpan">replpad.watcher.</span>watchTree
+            <span class="apidocSignatureSpan">(options, addedWatch, update, watching)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.replpad" id="apidoc.module.replpad">module replpad</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.replpad" id="apidoc.element.replpad.replpad">
+        function <span class="apidocSignatureSpan"></span>replpad
+        <span class="apidocSignatureSpan">(root, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function repreprep(root, opts) {
+
+  if (typeof root === &#x27;object&#x27;) {
+    opts = root;
+    root = null;
+  }
+  opts = opts || {};
+
+  var replOpts = getReplOpts(opts);
+  log.output = replOpts.output;
+
+  initConfig();
+
+  // override prompt with the one given in opts AFTER config was initialized
+  config.prompt = opts.prompt || config.prompt || &#x27;pad &#x3e; &#x27;;
+  replOpts.prompt = config.prompt;
+
+  if (!root) {
+    log.print(&#x27;Watching no files since no path was specified.&#x27;);
+    return boot(replOpts);
+  }
+
+  var watcher = initWatcher(root);
+  watcher.on(&#x27;initialized&#x27;, function () {
+    boot(replOpts);
+    var feedEdit = feedEdits(stdin, stdout);
+    watcher.on(&#x27;file-changed&#x27;, feedEdit);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.findexquire" id="apidoc.element.replpad.findexquire">
+        function <span class="apidocSignatureSpan">replpad.</span>findexquire
+        <span class="apidocSignatureSpan">(requirePath, uncached)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findexquire = function (requirePath, uncached) {
+  var reqlike = requireLike(requirePath, uncached);
+
+  function wrap (request) {
+    var mdl = reqlike(request);
+    var from = reqlike.resolve(request);
+    var fromdir = path.dirname(from);
+
+    findParentDir(from, &#x27;package.json&#x27;, function (err, packagedir) {
+      if (err) return log.error(err);
+
+      // now we now the packagedir and can attach dox that print readme
+      packDox(mdl, request, packagedir);
+
+      // first indexing run only handles functions of the required module itself
+      indexDirectory(fromdir, firstFilter, function () {
+        log.sillyln(&#x27;updated&#x27;, fromdir);
+        wire.emit(&#x27;findex-first-pass&#x27;, requirePath);
+
+        // now lets take care of all functions found in the dependencies of the module
+        var dependencies = path.join(fromdir, &#x27;node_modules&#x27;);
+        fs.exists(dependencies, function (exists) {
+          if (!exists) return;
+          indexDirectory(dependencies, secondFilter, function () {
+            wire.emit(&#x27;findex-second-pass&#x27;, requirePath);
+            log.sillyln(&#x27;updated %s dependencies&#x27;, fromdir);
+          });
+        });
+      });
+
+    });
+
+    return mdl;
+  }
+  wrap.resolve = reqlike.resolve.bind(reqlike);
+  return wrap;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.replpad.current" id="apidoc.module.replpad.current">module replpad.current</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.current.map" id="apidoc.element.replpad.current.map">
+        function <span class="apidocSignatureSpan">replpad.current.</span>map
+        <span class="apidocSignatureSpan">(nmap, imap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (nmap, imap) {
+
+  // map &#x27;jk&#x27; to &#x27;esc&#x27; to switch to normal mode
+  imap(&#x27;jk&#x27;, &#x27;esc&#x27;);
+
+  // navigate backward in history  via &#x27;ctrl-k&#x27; in insert mode
+  imap(&#x27;ctrl-k&#x27;, &#x27;ctrl-p&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var enabledPlugins = config.plugins &#x26;&#x26; typeof config.plugins === &#x27;object&#x27;
+? allPlugins.filter(pluginIsEnabled)
+: allPlugins;
+
+var specs = { cpus: Object.keys(os.cpus()).length, platform: os.platform(), host: os.hostname() }
+, v = process.versions
+, plugins = enabledPlugins.<span class="apidocCodeKeywordSpan">map</span>(colors.yellow).join(&#x27; | &#x27;);
+
+var msgs = [
+  &#x27;&#x27;
+, styles.underline(colors.brightRed(&#x27;replpad&#x27;)) + colors.yellow(&#x27; v&#x27; + pkg.version)
+, &#x27;&#x27;
+,   format(colors.cyan(&#x27;node&#x27;) + &#x27; %s&#x27;, colors.yellow(&#x27;v&#x27; + v.node))
+  + format(&#x27; | %s | %s cpus | %s platform&#x27;, colors.green(specs.host), colors.green(specs.cpus), colors.green(specs.platform
+))
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.replpad.findexquire" id="apidoc.module.replpad.findexquire">module replpad.findexquire</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.findexquire.findexquire" id="apidoc.element.replpad.findexquire.findexquire">
+        function <span class="apidocSignatureSpan">replpad.</span>findexquire
+        <span class="apidocSignatureSpan">(requirePath, uncached)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findexquire = function (requirePath, uncached) {
+  var reqlike = requireLike(requirePath, uncached);
+
+  function wrap (request) {
+    var mdl = reqlike(request);
+    var from = reqlike.resolve(request);
+    var fromdir = path.dirname(from);
+
+    findParentDir(from, &#x27;package.json&#x27;, function (err, packagedir) {
+      if (err) return log.error(err);
+
+      // now we now the packagedir and can attach dox that print readme
+      packDox(mdl, request, packagedir);
+
+      // first indexing run only handles functions of the required module itself
+      indexDirectory(fromdir, firstFilter, function () {
+        log.sillyln(&#x27;updated&#x27;, fromdir);
+        wire.emit(&#x27;findex-first-pass&#x27;, requirePath);
+
+        // now lets take care of all functions found in the dependencies of the module
+        var dependencies = path.join(fromdir, &#x27;node_modules&#x27;);
+        fs.exists(dependencies, function (exists) {
+          if (!exists) return;
+          indexDirectory(dependencies, secondFilter, function () {
+            wire.emit(&#x27;findex-second-pass&#x27;, requirePath);
+            log.sillyln(&#x27;updated %s dependencies&#x27;, fromdir);
+          });
+        });
+      });
+
+    });
+
+    return mdl;
+  }
+  wrap.resolve = reqlike.resolve.bind(reqlike);
+  return wrap;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.findexquire.find" id="apidoc.element.replpad.findexquire.find">
+        function <span class="apidocSignatureSpan">replpad.findexquire.</span>find
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (fn) { return indexes.find ? indexes.find(fn) : []; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// TODO: the approach may not be ideal because:
+// - npm places common dependencies in a sibling directory instead of nested (especially when npm dedupe is used)
+// - therefore we may not find those when indexing contained node_modules
+// - two alternatives:
+//    1. require everything that is a dir level above (excluding node_modules)
+//    2. look for dependencies in package.json, require.resolve them and index the containing directory
+
+go.find = function (fn) { return indexes.find ? indexes.<span class="apidocCodeKeywordSpan">find</span>(fn) : []; };
+go.indexes = indexes;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.replpad.utl" id="apidoc.module.replpad.utl">module replpad.utl</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.copyFile" id="apidoc.element.replpad.utl.copyFile">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>copyFile
+        <span class="apidocSignatureSpan">(srcFile, tgtFile, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFile = function (srcFile, tgtFile, cb) {
+  var readStream = fs.createReadStream(srcFile)
+    , writeStream = fs.createWriteStream(tgtFile);
+
+  writeStream
+    .on(&#x27;close&#x27;, cb)
+    .on(&#x27;error&#x27;, cb);
+
+  readStream
+    .on(&#x27;error&#x27;, cb);
+
+  readStream.pipe(writeStream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.copyFileSync" id="apidoc.element.replpad.utl.copyFileSync">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>copyFileSync
+        <span class="apidocSignatureSpan">(srcFile, tgtFile)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFileSync = function (srcFile, tgtFile) {
+  var buflen    =  64 * 1024
+    , buf       =  new Buffer(buflen)
+    , fdr       =  fs.openSync(srcFile, &#x27;r&#x27;)
+    , fdw       =  fs.openSync(tgtFile, &#x27;w&#x27;)
+    , bytesRead =  1
+    , pos       =  0
+    ;
+
+  while (bytesRead &#x3e; 0) {
+    bytesRead = fs.readSync(fdr, buf, 0, buflen, pos);
+    fs.writeSync(fdw, buf, 0, bytesRead);
+    pos += bytesRead;
+  }
+
+  fs.closeSync(fdr);
+  return fs.closeSync(fdw);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+module.exports = function () {
+  if (!utl.existsSync(paths.configFile)) {
+
+mkdirp.sync(path.dirname(paths.configFile));
+
+try {
+  utl.<span class="apidocCodeKeywordSpan">copyFileSync</span>(require.resolve(&#x27;./default-config&#x27;), paths.configFile);
+  return loadFrom(paths.configFile);
+} catch (err) {
+  log.error(&#x27;Unable to create config file&#x27;, err);
+  log.error(&#x27;Unable to create config file&#x27;, err.stack);
+  log.infoln(&#x27;Using default config&#x27;);
+  return require(&#x27;./default-config&#x27;);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.existsSync" id="apidoc.element.replpad.utl.existsSync">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>existsSync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">existsSync = function (path) {
+  try {
+    nullCheck(path);
+    binding.stat(pathModule._makeLong(path), statValues);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function loadFrom (p) {
+  log.print(colors.yellow(&#x27;\nLoading replpad config from: %s\n&#x27;), p);
+  return require(p);
+}
+
+module.exports = function () {
+  if (!utl.<span class="apidocCodeKeywordSpan">existsSync</span>(paths.configFile)) {
+
+mkdirp.sync(path.dirname(paths.configFile));
+
+try {
+  utl.copyFileSync(require.resolve(&#x27;./default-config&#x27;), paths.configFile);
+  return loadFrom(paths.configFile);
+} catch (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.inspect" id="apidoc.element.replpad.utl.inspect">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>inspect
+        <span class="apidocSignatureSpan">(obj, depth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function (obj, depth) {
+  return util.inspect(obj, false, depth || 5, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+global.$repl = r;
+global.require = findexquire(path.join(process.cwd(), &#x27;repl.js&#x27;), true);
+
+r.writer = function (s) {
+  // i.e. Function.src returns the higlighted string at __replpad_print_raw__ which we just want to print as is
+  var printRaw = s &#x26;&#x26; s.__replpad_print_raw__;
+  return printRaw || util.<span class="apidocCodeKeywordSpan">inspect</span>(s, config.inspect.showHidden, config.inspect.depth,
+true);
+};
+
+return r;
+}
+
+function boot(opts) {
+instructions(opts.output);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.log" id="apidoc.element.replpad.utl.log">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>log
+        <span class="apidocSignatureSpan">(obj, depth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function log(obj, depth) {
+  var s = util.inspect(obj, false, depth || 5, true);
+  fs.appendFileSync(logFile, s);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+have the repl evaluate it.
+
+You can add commands to the repl in real time via `$repl.defineCommand`
+
+```js
+$repl.define(&#x27;sayhi&#x27;, {
+    help: &#x27;Says hi via .sayhi&#x27;
+  , action: function () { console.<span class="apidocCodeKeywordSpan">log</span>(&#x27;Hi!&#x27;) }
+})
+```
+
+## Keyboard Shortcuts
+
+- `Ctrl-L` clears the terminal
+- `Ctrl-D` exits replpad
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.pad" id="apidoc.element.replpad.utl.pad">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>pad
+        <span class="apidocSignatureSpan">(s, len, padding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pad(s, len, padding) {
+  len = len || 0;
+  padding = padding || &#x27; &#x27;;
+
+  return len + 1 &#x3e;= s.length
+    ? s + new Array(len + 1 - s.length).join(padding)
+    : s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  help: &#x27;Show this list of repl commands&#x27;,
+  action: function() {
+    Object.keys(this.commands)
+      .sort()
+      .forEach(function(name) {
+        var cmd = repl.commands[name]
+          , help = cmd.help || &#x27;&#x27;
+          , formattedName = colors.brightBlue(utl.<span class="apidocCodeKeywordSpan">pad</span>(name, 15, &#x27; &#x27;));
+
+        log.print(&#x27;%s %s\n&#x27;, formattedName, help);
+      });
+    this.displayPrompt();
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.utl.shallowClone" id="apidoc.element.replpad.utl.shallowClone">
+        function <span class="apidocSignatureSpan">replpad.utl.</span>shallowClone
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shallowClone(obj) {
+  var clone = {};
+  Object.keys(obj).forEach(function (k) {
+    clone[k] = obj[k];
+  });
+  return clone;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+module.exports = function completeAppend(history) {
+var highlighted
+  , code = &#x27;&#x27;
+  , rewritten
+  , l = history.length
+  , start = 0
+  , format = utl.<span class="apidocCodeKeywordSpan">shallowClone</span>(config.feed.format);
+
+if (l === 0) return null;
+
+// skip commands, i.e. &#x27;.append&#x27;
+while (/^[ ]*\.\w+[ ]*$/.test(history[start])) {
+  start++;
+  if (start == l) return null;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.replpad.watcher" id="apidoc.module.replpad.watcher">module replpad.watcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.watcher.watchFile" id="apidoc.element.replpad.watcher.watchFile">
+        function <span class="apidocSignatureSpan">replpad.watcher.</span>watchFile
+        <span class="apidocSignatureSpan">(entry, eventName, startedWatching, update)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function watchFile(entry, eventName, startedWatching, update) {
+  var fullPath = entry.fullPath;
+
+  if (watchers[fullPath]) return;
+  startedWatching(entry);
+
+  chokidar.watch(fullPath, { persistent: true })
+    .on(&#x27;change&#x27;, function () {
+      var prevStat = watchers[fullPath].stat
+        , entry    = watchers[fullPath].entry
+
+      fs.stat(fullPath, function (err, stat) {
+        if (err) return log.error(&#x27;watcher&#x27;, err);
+
+        // ignore atime changes (read access)
+        if ( prevStat
+          &#x26;&#x26; dateEqual(prevStat.mtime, stat.mtime)
+          &#x26;&#x26; dateEqual(prevStat.ctime, stat.ctime)) return;
+
+        watchers[fullPath].stat = stat
+        update(entry);
+      });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.replpad.watcher.watchTree" id="apidoc.element.replpad.watcher.watchTree">
+        function <span class="apidocSignatureSpan">replpad.watcher.</span>watchTree
+        <span class="apidocSignatureSpan">(options, addedWatch, update, watching)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function watchTree(options, addedWatch, update, watching) {
+
+  function startedWatching(entry) {
+    watchers[entry.fullPath] = { lastChange: new Date(), entry: entry };
+    addedWatch({ entry: entry, all: watchers });
+  }
+
+  function watchDir(fullPath) {
+    if (watchedDirs[fullPath]) return;
+    watchedDirs[fullPath] = true;
+
+    chokidar.watch(fullPath, { persistent: true })
+      .on(&#x27;add&#x27;, function () {
+        var cloned = utl.shallowClone(options);
+
+        cloned.depth = 0;
+        cloned.root = fullPath;
+
+        readdirp(cloned)
+          .on(&#x27;warn&#x27;, log.error)
+          .on(&#x27;error&#x27;, log.error)
+          .on(&#x27;data&#x27;, function (entry) {
+            try {
+              watchFile(entry, &#x27;change&#x27;, startedWatching, update);
+            } catch(e) {
+              log.error(&#x27;Not watching: &#x27; + entry.path);
+            }
+          });
+      })
+      .on(&#x27;unlink&#x27;, function (path) {
+        watchers[fullPath] = void 0;
+      });
+  }
+
+  readdirp(options)
+    .on(&#x27;warn&#x27;, log.error)
+    .on(&#x27;error&#x27;, log.error)
+    .on(&#x27;data&#x27;, function (entry) {
+      try {
+        watchFile(entry, &#x27;change&#x27;, startedWatching, update);
+        watchDir(entry.fullParentDir, utl.shallowClone(options), watching, update);
+      } catch(e) {
+        log.error(&#x27;Not watching: &#x27; + entry.path);
+      }
+    })
+    .on(&#x27;end&#x27;, function () {
+      watchDir(options.root, utl.shallowClone(options), watching, update);
+      if (watching) watching(watchers);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    , opts = {
+        fileFilter      :  feed.fileFilter      || &#x27;*.js&#x27;
+      , directoryFilter :  feed.directoryFilter || [ &#x27;!.*&#x27;, &#x27;!node_modules&#x27; ]
+      , root            :  root
+      }
+    ;
+
+  watcher.<span class="apidocCodeKeywordSpan">watchTree</span>(
+      opts
+    , function onAddedWatch(info) {
+        try {
+log.print(&#x27;Started watching: &#x27; + info.entry.path);
+
+// log total every time a new file is added after watcher was initialized and source it
+if (watcherInitialized) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
